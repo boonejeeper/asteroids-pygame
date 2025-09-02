@@ -14,9 +14,16 @@ def main():
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
 
     while True:
+        # listen for game exit
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+
+        # update controls
+        player.update(dt)
+
+
+        # update visuals
         screen.fill(Color(0,0,0))
         player.draw(screen)
 
